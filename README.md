@@ -1,37 +1,17 @@
-## Welcome to GitHub Pages
+## 实现一个多视频拼接成长视频
+var ctx = [{img_url: "img/c1.png"},{img_url: "img/c2.png"},{img_url:"http://vjs.zencdn.net/v/oceans.mp4"},{img_url: "img/c3.png"}];
+var dur =[{time:"1000"},{time:"3000"},{time:"4000"},{time:"3000"}]
+sum(0,dur,ctx);
+function sum(i,arr,arr2){
+i++;
+if(i>arr.length){
+return 
+}else{
+console.log("这里你的渲染",arr2[i-1])
 
-You can use the [editor on GitHub](https://github.com/maxtcarry/maxtone/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+setTimeout(function(){
+sum(i,arr,arr2);
+},parseInt(arr[i-1].time))
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/maxtcarry/maxtone/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+}
+}
